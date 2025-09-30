@@ -8,9 +8,9 @@ void dinkTests() {
 	sti::dink<float> test_dinka = sti::dink<float>(test);
 	sti::dink<float> test_dinkb = sti::dink<float>(test);
 
-	std::cout << (test_dinka == test_dinkb) << std::endl;
-	std::cout << (test_dinkb == test_dinkb) << std::endl;
-	std::cout << test_dinkb.hash() << std::endl;
+	std::cout << (test_dinka == test_dinkb) << '\n';
+	std::cout << (test_dinkb == test_dinkb) << '\n';
+	std::cout << test_dinkb.hash() << '\n';
 	std::cout << "End Dink Test\n";
 }
 
