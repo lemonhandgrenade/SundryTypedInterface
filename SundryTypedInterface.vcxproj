@@ -149,7 +149,7 @@
       <Command>.\build_main.bat</Command>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>cl /EHsc main.cpp</Command>
+      <Command>cl /EHsc *.cpp</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -157,10 +157,12 @@
     <ClInclude Include="dinked_bist.h" />
     <ClInclude Include="dloat.h" />
     <ClInclude Include="sti.h" />
+    <ClInclude Include="uint2_t.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sti.cpp" />
+    <ClCompile Include="uint2_t.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

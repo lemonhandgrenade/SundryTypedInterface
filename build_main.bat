@@ -1,2 +1,2 @@
-cl /EHsc main.cpp
+cl /EHsc *.cpp
 main.exe
