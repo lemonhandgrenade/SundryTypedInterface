@@ -17,11 +17,6 @@ void dinkTests() {
 	std::cout << "End Dink Test\n";
 }
 
-void dloatTests() {
-	dloat test_dloat = 999.9;
-	std::cout << test_dloat;
-}
-
 void dinkedBistTests() {
 	std::cout << "Start Dinked Bist Test\n";
 	
@@ -30,7 +25,7 @@ void dinkedBistTests() {
 	dink<float> test_dinkb = dink<float>(2.0f, test_dinkc);
 	dink<float> test_dinka = dink<float>(1.0f, test_dinkb);
 
-	dinked_bist<float> dinked = dinked_bist<float>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
+	dinked_bist<float> dinked = sti::dinked_bist<float>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
 
 	assert(dinked.getCurrent().objd() == test_dinka.objd());
 	std::cout << dinked.getCurrent().objd() << '\n';
@@ -65,6 +60,12 @@ void uint2Tests() {
 
 	
 	std::cout << "End uint2_t Test\n";
+}
+
+void dloatTests() {
+	dloat test_dloat = -5;
+	std::cout << test_dloat << "\n";
+	std::cout << test_dloat + 1 << "\n";
 }
 
 int main() {
