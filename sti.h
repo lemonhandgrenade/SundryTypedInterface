@@ -1,5 +1,6 @@
 #ifndef sti_h
 #define sti_h
+#define MOLONEYNUMBER 3
 
 #include "dink.h"
 #include "dinked_bist.h"
