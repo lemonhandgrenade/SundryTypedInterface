@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include "iostream"
 #include "sti.h"
 
@@ -21,6 +23,7 @@ void dloatTests() {
 
 void dinkedBistTests() {
 	std::cout << "Start Dinked Bist Test\n";
+	
 	sti::dink<float> test_dinkd = sti::dink<float>(4.0f);
 	sti::dink<float> test_dinkc = sti::dink<float>(3.0f, test_dinkd);
 	sti::dink<float> test_dinkb = sti::dink<float>(2.0f, test_dinkc);
@@ -28,10 +31,25 @@ void dinkedBistTests() {
 
 	sti::dinked_bist<float> dinked = sti::dinked_bist<float>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
 
-	for (int i = 0; i < 5; i++) {
-		std::cout << dinked.getCurrent().objd() << '\n';
-		dinked.next();
-	}
+	assert(dinked.getCurrent().objd() == test_dinka.objd());
+	std::cout << dinked.getCurrent().objd() << '\n';
+	dinked.next();
+
+	assert(dinked.getCurrent().objd() == test_dinkb.objd());
+	std::cout << dinked.getCurrent().objd() << '\n';
+	dinked.next();
+
+	assert(dinked.getCurrent().objd() == test_dinkc.objd());
+	std::cout << dinked.getCurrent().objd() << '\n';
+	dinked.next();
+
+	assert(dinked.getCurrent().objd() == test_dinkd.objd());
+	std::cout << dinked.getCurrent().objd() << '\n';
+	dinked.next();
+
+	assert(dinked.getCurrent().objd() == test_dinkd.objd());
+	std::cout << dinked.getCurrent().objd() << '\n';
+	dinked.next();
 	
 	std::cout << "End Dinked Bist Test\n";
 }
