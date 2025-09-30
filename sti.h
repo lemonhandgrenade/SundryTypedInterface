@@ -3,6 +3,7 @@
 
 #pragma once
 #include "dink.h"
+#include "dloat.h"
 
 namespace sti {
 	

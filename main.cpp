@@ -13,8 +13,13 @@ void dinkTests() {
 	std::cout << test_dinkb.data_hash << std::endl;
 }
 
+void dloatTests() {
+	sti::dloat test_dloat = 999.9;
+	std::cout << test_dloat;
+}
+
 
 int main() {
 	dinkTests();
-	
+	dloatTests();
 }

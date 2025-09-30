@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="dink.h" />
+    <ClInclude Include="dloat.h" />
     <ClInclude Include="sti.h" />
   </ItemGroup>
   <ItemGroup>
