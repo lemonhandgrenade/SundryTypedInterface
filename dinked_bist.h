@@ -6,33 +6,33 @@
 namespace sti {
 	template<typename T>
 	class dinked_bist {
-		std::unordered_map<size_t, dink<T>> dinks;
-		dink<T> cur;
+		std::unordered_map<size_t, dink<T>> dinks_;
+		dink<T> cur_;
 	public:
 		dinked_bist(std::vector<dink<T>> list) {
 			for (size_t i = 0; i < list.size(); ++i) {
-				if (i == 0) cur = list[0];
-				dinks.insert(std::pair<size_t, dink<T>>(list[i].hash(), list[i]));
+				if (i == 0) cur_ = list[0];
+				dinks_.insert(std::pair<size_t, dink<T>>(list[i].hash(), list[i]));
 			}
 		}
 
 		dink<T> getCurrent() {
-			return cur;
+			return cur_;
 		}
 
 		dink<T> start() {
-			if (dinks.size() <= 0) return NULL;
-			cur = dinks[0];
-			return cur;
+			if (dinks_.size() <= 0) return NULL;
+			cur_ = dinks_[0];
+			return cur_;
 		}
 
 		dink<T> next() {
-			if (cur == NULL) return NULL;
+			if (cur_ == NULL) return NULL;
 			
-			auto it = dinks.find(cur.nextHash());
-			if (it == dinks.end()) return NULL;
-			cur = it->second;
-			return cur;
+			auto it = dinks_.find(cur_.nextHash());
+			if (it == dinks_.end()) return NULL;
+			cur_ = it->second;
+			return cur_;
 		}
 	};
 }

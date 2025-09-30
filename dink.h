@@ -3,41 +3,41 @@
 namespace sti {
 	template<typename T>
 	class dink {
-		T data;
-		size_t data_hash;
-		size_t next_hash;
+		T data_;
+		size_t data_hash_;
+		size_t next_hash_;
 
 	public:
 		dink() {
-			data = NULL;
-			data_hash = 0;
-			next_hash = 0;
+			data_ = NULL;
+			data_hash_ = 0;
+			next_hash_ = 0;
 		}
 
 		dink(const T& obj) {
-			data = obj;
+			data_ = obj;
 			std::hash<T> hasher;
-			data_hash = hasher(obj);
-			next_hash = 0;
+			data_hash_ = hasher(obj);
+			next_hash_ = 0;
 		}
 
 		dink(const T& obj, dink<T> follow) {
-			data = obj;
+			data_ = obj;
 			std::hash<T> hasher;
-			data_hash = hasher(obj);
-			next_hash = follow.hash();
+			data_hash_ = hasher(obj);
+			next_hash_ = follow.hash();
 		}
 
 		T objd() {
-			return data;
+			return data_;
 		}
 
-		size_t hash() {
-			return data_hash;
+		size_t hash() const {
+			return data_hash_;
 		}
 
-		size_t nextHash() {
-			return next_hash;
+		size_t nextHash() const {
+			return next_hash_;
 		}
 
 		friend bool operator==(const dink& a, const dink& b) {
