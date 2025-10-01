@@ -1,7 +1,5 @@
 #pragma once
 #include <cmath>
-#include <iostream>
-#include "sti.h"
 
 namespace sti {
 	class dloat {
@@ -46,6 +44,15 @@ namespace sti {
 		dloat operator/(const int& other) const
 		{
 			return update(value_/static_cast<float>(other));
+		}
+		bool operator==(const dloat& other) const {
+			return std::fabs(value_ - other.value_) < 0.00001f;
+		}
+		bool operator==(const float& other) const {
+			return std::fabs(value_ - other) < 0.00001f;
+		}
+		bool operator==(const double& other) const {
+			return std::fabs(value_ - other) < 0.00001;
 		}
 	private:
 		static float inverse_mod(const float& val, const float& mod) {

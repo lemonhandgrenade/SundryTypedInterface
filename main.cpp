@@ -19,7 +19,7 @@ void dinkTests() {
 void dloatTests() {
 	std::cout << "Start Dloat Test\n";
 	const dloat test_dloat = -999.9;
-	std::cout << test_dloat;
+	assert(test_dloat == -.9999);
 	std::cout << "End Dloat Test\n";
 }
 
