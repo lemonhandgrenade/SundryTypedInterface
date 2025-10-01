@@ -1,6 +1,5 @@
 #include <cassert>
 
-#include "flag_bearer.h"
 #include "iostream"
 #include "sti.h"
 
@@ -9,8 +8,8 @@ using namespace sti;
 void dinkTests() {
 	std::cout << "Start Dink Test\n";
 	constexpr int test = 9;
-	const dink<int> test_dinka = dink<int>(test);
-	const dink<int> test_dinkb = dink<int>(test);
+	const dink<int> test_dinka = dink(test);
+	const dink<int> test_dinkb = dink(test);
 
 	assert(test_dinka == test_dinkb);
 	assert(test_dinka << test_dinkb);
@@ -27,10 +26,10 @@ void dloatTests() {
 void dinkedBistTests() {
 	std::cout << "Start Dinked Bist Test\n";
 	
-	dink<int> test_dinkd = dink<int>(4);
-	dink<int> test_dinkc = dink<int>(3, test_dinkd);
-	dink<int> test_dinkb = dink<int>(2, test_dinkc);
-	dink<int> test_dinka = dink<int>(1, test_dinkb);
+	dink<int> test_dinkd = dink(4);
+	dink<int> test_dinkc = dink(3, test_dinkd);
+	dink<int> test_dinkb = dink(2, test_dinkc);
+	dink<int> test_dinka = dink(1, test_dinkb);
 
 	dinked_bist<int> dinked = dinked_bist<int>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
 
@@ -116,7 +115,7 @@ void flagBearerTests() {
 void baleTests() {
 	std::cout << "Start bale Test\n";
 
-	bale<int> bale = {1, 3, 4};
+	bale bale = {1, 3, 4};
 	assert(+bale);				// Is Not Empty
 	assert(bale[0] == 1);		// Ensure Init Correctly
 	assert(bale[1] == 3);		//

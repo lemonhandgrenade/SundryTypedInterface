@@ -18,7 +18,6 @@ namespace sti {
 		template <typename T>
 		T get(const size_t i) {
 			if (i > data_.size() - 1) throw std::range_error("Integer Out Of Range");
-			//void* add = data_[i];
 			if (data_[i].type() != typeid(T)) throw std::logic_error("Incorrect Type");
 			return std::any_cast<T>(data_[i]);
 		}
