@@ -20,6 +20,11 @@ namespace sti {
 			if (i > data_.size() - 1) throw std::range_error("Integer Out Of Range");
 			return data_[i];
 		}
+
+		std::vector<std::any>::iterator begin() { return data_.begin(); }
+		[[nodiscard]] std::vector<std::any>::const_iterator begin() const { return data_.begin(); }
+		std::vector<std::any>::iterator end() { return data_.end(); }
+		[[nodiscard]] std::vector<std::any>::const_iterator end() const { return data_.end(); }
 	};
 }
 
