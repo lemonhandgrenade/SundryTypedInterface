@@ -149,14 +149,17 @@
       <Command>.\build_main.bat</Command>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>cl /EHsc /W4 /I public *.cpp private/uint/*.cpp</Command>
+      <Command>cl /EHsc /W4 /I public *.cpp private/uint/*.cpp /std:c++20</Command>
     </PostBuildEvent>
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir)public</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="dloat.h" />
+    <ClInclude Include="public\bale.h" />
     <ClInclude Include="public\dink\dink.h" />
     <ClInclude Include="public\dink\dinked_bist.h" />
     <ClInclude Include="public\flag_bearer.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="public\uint\uint4_t.h" />
     <ClInclude Include="public\uint\uint6_t.h" />
     <ClInclude Include="public\uint\uintx_t.h" />
+    <ClInclude Include="public\unkempt_data.h" />
     <ClInclude Include="sti.h" />
   </ItemGroup>
   <ItemGroup>

@@ -113,6 +113,29 @@ void flagBearerTests() {
 	std::cout << "End flag_bearer Test\n";
 }
 
+void baleTests() {
+	std::cout << "Start bale Test\n";
+
+	bale<int> bale = {1, 3, 4};
+	assert(+bale);				// Is Not Empty
+	assert(bale[0] == 1);		// Ensure Init Correctly
+	assert(bale[1] == 3);		//
+	assert(bale[2] == 4);		//
+	assert(bale >> 4);			// Contains 4		[1,3,4]
+	bale.clear();           	
+	assert(-bale);				// Is Empty			[]
+	bale << 4;					// Add 4 3 times
+	bale.add(4);				//
+	bale += 4;					//					[4,4,4]
+	assert((bale & 4) == 3);	// Has 3 4s
+	bale -= 4;					// Remove A 4		[4,4]
+	assert((bale & 4) == 2);	// Has 2 4s
+	const int popped = --bale;	//					[4]
+	assert(popped == 4);		// Ensure Popped Val Is 4
+	assert(++bale == 1);		// Count Is 1
+	std::cout << "End bale Test\n";
+}
+
 int main() {
 	dinkTests();
 	dloatTests();
@@ -124,4 +147,9 @@ int main() {
 	uintXTests();
 	
 	flagBearerTests();
+	baleTests();
+	
+	unkempt_data data = {true, 2.0, 5.0f, "It has begun."};
+	assert(data.get<bool>(0));
+	assert(data.get<double>(1) == 2.0);
 }

@@ -6,6 +6,8 @@
 #include "dink/dink.h"
 #include "dink/dinked_bist.h"
 #include "flag_bearer.h"
+#include "bale.h"
+#include "unkempt_data.h"
 #include "uint/uint2_t.h"
 #include "uint/uint4_t.h"
 #include "uint/uint6_t.h"
