@@ -33,15 +33,15 @@ void dinkedBistTests() {
 
 	dinked_bist<int> dinked = dinked_bist<int>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
 
-	assert(dinked.getCurrent().objd() == test_dinka.objd());
+	assert(dinked.getCurrent().data() == test_dinka.data());
 	dinked.next();
-	assert(dinked.getCurrent().objd() == test_dinkb.objd());
+	assert(dinked.getCurrent().data() == test_dinkb.data());
 	dinked.next();
-	assert(dinked.getCurrent().objd() == test_dinkc.objd());
+	assert(dinked.getCurrent().data() == test_dinkc.data());
 	dinked.next();
-	assert(dinked.getCurrent().objd() == test_dinkd.objd());
+	assert(dinked.getCurrent().data() == test_dinkd.data());
 	dinked.next();
-	assert(dinked.getCurrent().objd() == test_dinkd.objd());
+	assert(dinked.getCurrent().data() == test_dinkd.data());
 	dinked.next();
 	
 	std::cout << "End Dinked Bist Test\n";

@@ -21,15 +21,14 @@ namespace sti {
 		}
 
 		dink<T> start() {
-			if (dinks_.size() <= 0) return NULL;
+			if (dinks_.empty()) return NULL;
 			cur_ = dinks_[0];
 			return cur_;
 		}
 
 		dink<T> next() {
 			if (cur_ == NULL) return NULL;
-			
-			auto it = dinks_.find(cur_.nextHash());
+			auto it = dinks_.find(cur_.next_hash());
 			if (it == dinks_.end()) return NULL;
 			cur_ = it->second;
 			return cur_;

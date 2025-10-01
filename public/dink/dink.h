@@ -21,32 +21,21 @@ namespace sti {
 			next_hash_ = 0;
 		}
 
-		dink(const T& obj, dink follow) {
+		dink(const T& obj, const dink& follow) {
 			data_ = obj;
 			std::hash<T> hasher;
 			data_hash_ = hasher(obj);
 			next_hash_ = follow.hash();
 		}
 
-		T objd() { return data_; }
+		T data() { return data_; }
 
-		size_t hash() const { return data_hash_; }
-		size_t nextHash() const { return next_hash_; }
+		[[nodiscard]] size_t hash() const { return data_hash_; }
+		[[nodiscard]] size_t next_hash() const { return next_hash_; }
 
-		friend bool operator==(const dink& a, const dink& b) {
-			return a.data_ == b.data_;
-		}
-
-		friend bool operator!=(const dink& a, const dink& b) {
-			return !(a == b);
-		}
-
-		friend bool operator<<(const dink& a, const dink& b) {
-			return &a < &b;
-		}
-
-		friend bool operator>>(const dink& a, const dink& b) {
-			return &a > &b;
-		}
+		friend bool operator==(const dink& a, const dink& b) { return a.data_ == b.data_; }
+		friend bool operator!=(const dink& a, const dink& b) { return !(a == b); }
+		friend bool operator<<(const dink& a, const dink& b) { return &a < &b; }
+		friend bool operator>>(const dink& a, const dink& b) { return &a > &b; }
 	};
 }
