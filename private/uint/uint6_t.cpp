@@ -16,6 +16,6 @@ uint6_t uint6_t::operator/(const uint6_t& other) const  {
 	return uint6_t(val_ / other.val_ & 0x3f);
 }
 
-bool uint6_t::operator==(const uint6_t& other) const	{ return val_ == other.val_;	}
+bool uint6_t::operator==(const uint6_t& other) const	{ return val_ == other.val_;}
 bool uint6_t::operator==(const int& other) const		{ return val_ == other;		}
-bool uint6_t::operator!=(const uint6_t& other) const	{ return val_ != other.val_;	}
+bool uint6_t::operator!=(const uint6_t& other) const	{ return val_ != other.val_;}

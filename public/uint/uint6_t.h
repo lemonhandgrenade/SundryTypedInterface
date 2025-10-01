@@ -7,9 +7,9 @@ namespace sti {
 	public:
 		uint6_t() : val_(0) {}
 
-		uint6_t(const uint8_t& base);
+		explicit uint6_t(const uint8_t& base);
 		
-		operator int() const { return val_;}
+		explicit operator int() const { return val_;}
 
 		uint6_t operator+(const uint6_t& other) const;
 		uint6_t operator-(const uint6_t& other) const;

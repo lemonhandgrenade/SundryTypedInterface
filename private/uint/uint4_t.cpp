@@ -16,6 +16,6 @@ uint4_t uint4_t::operator/(const uint4_t& other) const  {
 	return uint4_t(val_ / other.val_ & 0x0f);
 }
 
-bool uint4_t::operator==(const uint4_t& other) const	{ return val_ == other.val_;	}
+bool uint4_t::operator==(const uint4_t& other) const	{ return val_ == other.val_;}
 bool uint4_t::operator==(const int& other) const		{ return val_ == other;		}
-bool uint4_t::operator!=(const uint4_t& other) const	{ return val_ != other.val_;	}
+bool uint4_t::operator!=(const uint4_t& other) const	{ return val_ != other.val_;}
