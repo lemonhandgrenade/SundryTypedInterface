@@ -159,6 +159,7 @@
     <ClInclude Include="dloat.h" />
     <ClInclude Include="public\dink\dink.h" />
     <ClInclude Include="public\dink\dinked_bist.h" />
+    <ClInclude Include="public\flag_bearer.h" />
     <ClInclude Include="public\uint\uint2_t.h" />
     <ClInclude Include="public\uint\uint4_t.h" />
     <ClInclude Include="public\uint\uint6_t.h" />
@@ -167,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="private\flag_bearer.cpp" />
     <ClCompile Include="private\uint\uint2_t.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>SundryTy.0795641d\x64\Build\</AssemblerListingLocation>
