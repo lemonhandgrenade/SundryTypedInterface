@@ -34,7 +34,7 @@ namespace sti {
 		size_t nextHash() const { return next_hash_; }
 
 		friend bool operator==(const dink& a, const dink& b) {
-			return &a == &b;
+			return a.data_ == b.data_;
 		}
 
 		friend bool operator!=(const dink& a, const dink& b) {

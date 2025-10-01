@@ -1,6 +1,4 @@
 #include <cassert>
-#include <bitset>
-
 #include "iostream"
 #include "sti.h"
 
@@ -14,6 +12,7 @@ void dinkTests() {
 
 	std::cout << (test_dinka == test_dinkb) << '\n';
 	std::cout << (test_dinkb == test_dinkb) << '\n';
+	std::cout << (test_dinka << test_dinkb) << '\n';
 	std::cout << "End Dink Test\n";
 }
 
@@ -94,6 +93,17 @@ void uint6Tests() {
 	std::cout << "End uint6_t Test\n";
 }
 
+void uintXTests() {
+	std::cout << "Start uintx_t Test\n";
+
+	uintx_t num = uintx_t(3, 5);
+	assert(num == 5);
+	num -= 3;
+	assert(num == 2);
+	
+	std::cout << "End uintx_t Test\n";
+}
+
 int main() {
 	dinkTests();
 	dloatTests();
@@ -102,18 +112,5 @@ int main() {
 	uint2Tests();
 	uint4Tests();
 	uint6Tests();
-
-	uintx_t a = uintx_t(1);
-	int val = 1;
-	a = val;
-	bool equal = (a == 1);
-	std::cout << "equals " << equal << " size " << a.get_bit_count();
-	std::cout <<"\n";
-
-	uintx_t b = uintx_t(9);
-	val = 480;
-	b = val;
-	equal = (b == 480);
-	std::cout << "equals " << equal << " size " << b.get_bit_count();
-	std::cout <<"\n";
+	uintXTests();
 }
