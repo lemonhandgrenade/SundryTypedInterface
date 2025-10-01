@@ -21,24 +21,17 @@ namespace sti {
 			next_hash_ = 0;
 		}
 
-		dink(const T& obj, dink<T> follow) {
+		dink(const T& obj, dink follow) {
 			data_ = obj;
 			std::hash<T> hasher;
 			data_hash_ = hasher(obj);
 			next_hash_ = follow.hash();
 		}
 
-		T objd() {
-			return data_;
-		}
+		T objd() { return data_; }
 
-		size_t hash() const {
-			return data_hash_;
-		}
-
-		size_t nextHash() const {
-			return next_hash_;
-		}
+		size_t hash() const { return data_hash_; }
+		size_t nextHash() const { return next_hash_; }
 
 		friend bool operator==(const dink& a, const dink& b) {
 			return &a == &b;

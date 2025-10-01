@@ -1,4 +1,5 @@
 #include <cassert>
+#include <bitset>
 
 #include "iostream"
 #include "sti.h"
@@ -13,8 +14,14 @@ void dinkTests() {
 
 	std::cout << (test_dinka == test_dinkb) << '\n';
 	std::cout << (test_dinkb == test_dinkb) << '\n';
-	std::cout << test_dinkb.hash() << '\n';
 	std::cout << "End Dink Test\n";
+}
+
+void dloatTests() {
+	std::cout << "Start Dloat Test\n";
+	dloat test_dloat = -999.9;
+	std::cout << test_dloat;
+	std::cout << "End Dloat Test\n";
 }
 
 void dinkedBistTests() {
@@ -25,7 +32,7 @@ void dinkedBistTests() {
 	dink<float> test_dinkb = dink<float>(2.0f, test_dinkc);
 	dink<float> test_dinka = dink<float>(1.0f, test_dinkb);
 
-	dinked_bist<float> dinked = sti::dinked_bist<float>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
+	dinked_bist<float> dinked = dinked_bist<float>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
 
 	assert(dinked.getCurrent().objd() == test_dinka.objd());
 	std::cout << dinked.getCurrent().objd() << '\n';
@@ -57,15 +64,34 @@ void uint2Tests() {
 	assert(num == 3);
 	num = uint2_t(2);
 	assert(num == 2);
-
 	
 	std::cout << "End uint2_t Test\n";
 }
 
-void dloatTests() {
-	dloat test_dloat = -5;
-	std::cout << test_dloat << "\n";
-	std::cout << test_dloat + 1 << "\n";
+void uint4Tests() {
+	std::cout << "Start uint4_t Test\n";
+
+	uint4_t num = uint4_t(15);
+	assert(num == 15);
+	num = uint4_t(16);
+	assert(num == 15);
+	num = uint4_t(2);
+	assert(num == 2);
+	
+	std::cout << "End uint4_t Test\n";
+}
+
+void uint6Tests() {
+	std::cout << "Start uint6_t Test\n";
+
+	uint6_t num = uint6_t(63);
+	assert(num == 63);
+	num = uint6_t(64);
+	assert(num == 63);
+	num = uint6_t(2);
+	assert(num == 2);
+	
+	std::cout << "End uint6_t Test\n";
 }
 
 int main() {
@@ -74,4 +100,20 @@ int main() {
 	dinkedBistTests();
 
 	uint2Tests();
+	uint4Tests();
+	uint6Tests();
+
+	uintx_t a = uintx_t(1);
+	int val = 1;
+	a = val;
+	bool equal = (a == 1);
+	std::cout << "equals " << equal << " size " << a.get_bit_count();
+	std::cout <<"\n";
+
+	uintx_t b = uintx_t(9);
+	val = 480;
+	b = val;
+	equal = (b == 480);
+	std::cout << "equals " << equal << " size " << b.get_bit_count();
+	std::cout <<"\n";
 }

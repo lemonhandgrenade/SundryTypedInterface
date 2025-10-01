@@ -18,16 +18,22 @@
     <ClInclude Include="sti.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dink.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dloat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dinked_bist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="uint2_t.h">
+    <ClInclude Include="public\dink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="public\uint\uint2_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="public\uint\uint4_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="public\uint\uint6_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +44,13 @@
     <ClCompile Include="sti.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="uint2_t.cpp">
+    <ClCompile Include="private\uint\uint2_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="private\uint\uint4_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="private\uint\uint6_t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

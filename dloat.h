@@ -8,6 +8,9 @@ namespace sti {
 		float value_;
 
 	public:
+		dloat(const double& val) {
+			value_ = update(static_cast<float>(val));
+		}
 		dloat(const float& val) {
 			value_ = update(val);
 		}

@@ -15,8 +15,8 @@ namespace sti {
 		uint2_t operator-(const uint2_t& other) const;
 		uint2_t operator*(const uint2_t& other) const;
 		uint2_t operator/(const uint2_t& other) const;
-		uint2_t operator==(const uint2_t& other) const;
-		uint2_t operator==(const int& other) const;
-		uint2_t operator!=(const uint2_t& other) const;
+		bool operator==(const uint2_t& other) const;
+		bool operator==(const int& other) const;
+		bool operator!=(const uint2_t& other) const;
 	};
 }
