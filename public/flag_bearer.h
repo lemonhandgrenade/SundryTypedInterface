@@ -30,8 +30,8 @@ namespace sti {
 		
 		void set_flag(E flag, const bool val) {
 			const int f = static_cast<int>(flag);
-			const int idx = f / 8;
-			const int mod = f % 8;
+			const int idx = f / 8;		// / 8 Rounds To Byte Diff 26 -> 3 (24/8)
+			const int mod = f % 8;		// Get Sub Value 26 -> 2
 			int act = flags_[idx];
 			
 			if (val)
@@ -39,13 +39,13 @@ namespace sti {
 			else
 				act &= ~(1 << mod);
 			
-			flags_[idx] = act;
+			flags_[idx] = static_cast<uint8_t>(act);
 		}
 
 		bool get_flag(E flag) const {
 			const int f = static_cast<int>(flag);
-			const int idx = f / 8;
-			const int mod = f % 8;
+			const int idx = f / 8;		// / 8 Rounds To Byte Diff 26 -> 3 (24/8)
+			const int mod = f % 8;		// Get Sub Value 26 -> 2
 			const int act = flags_[idx];
 
 			return (act & 1 << mod) != 0;

@@ -168,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="private\flag_bearer.cpp" />
     <ClCompile Include="private\uint\uint2_t.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>SundryTy.0795641d\x64\Build\</AssemblerListingLocation>
