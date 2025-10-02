@@ -18,8 +18,10 @@ void dinkTests() {
 
 void dloatTests() {
 	std::cout << "Start Dloat Test\n";
-	const dloat test_dloat = -999.9;
+	dloat test_dloat = -999.9;
 	assert(test_dloat == -.9999);
+	test_dloat = test_dloat + 1.4999f;
+	assert(test_dloat == 0.5);
 	std::cout << "End Dloat Test\n";
 }
 

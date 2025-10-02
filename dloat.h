@@ -12,38 +12,38 @@ namespace sti {
 		dloat(const float& val) {
 			value_ = update(val);
 		}
-		operator float() const { return value_;}
+		explicit operator float() const { return value_;}
 		dloat operator+(const float& other) const
 		{
-			return update(value_+other);
+			return dloat(update(value_+other));
 		}
 		dloat operator+(const int& other) const
 		{
-			return update(value_+(float)other);
+			return dloat(update(value_+static_cast<float>(other)));
 		}
 		dloat operator-(const float& other) const
 		{
-			return update(value_-other);
+			return dloat(update(value_-other));
 		}
 		dloat operator-(const int& other) const
 		{
-			return update(value_-(float)other);
+			return dloat(update(value_-static_cast<float>(other)));
 		}
 		dloat operator*(const float& other) const
 		{
-			return update(value_*other);
+			return dloat(update(value_*other));
 		}
 		dloat operator*(const int& other) const
 		{
-			return update(value_*(float)other);
+			return dloat(update(value_*static_cast<float>(other)));
 		}
 		dloat operator/(const float& other) const
 		{
-			return update(value_/other);
+			return dloat(update(value_/other));
 		}
 		dloat operator/(const int& other) const
 		{
-			return update(value_/static_cast<float>(other));
+			return dloat(update(value_/static_cast<float>(other)));
 		}
 		bool operator==(const dloat& other) const {
 			return std::fabs(value_ - other.value_) < 0.00001f;
@@ -56,21 +56,13 @@ namespace sti {
 		}
 	private:
 		static float inverse_mod(const float& val, const float& mod) {
-			return val - (fmod(val,mod));
+			return val - fmod(val,mod);
 		}
-		static float update(const float& val)
-		{
-			
-			const float inv_mod = inverse_mod(abs(val),1);
-			float overflow{};
-			if (abs(val) >= 1)
-				overflow = ceil(log10(abs(inv_mod)));
-			else
-				return val;
-			
-			float temp = val;
-			temp /= pow(10.0f, overflow);
-			return temp;
+		static float update(const float& val) {
+			if (fabsf(val) < 1.0f) return val;
+			const float inv_mod = inverse_mod(fabsf(val),1);
+			const float overflow = ceil(log10(inv_mod));
+			return val / pow(10.0f, overflow);
 		}
 	};
 
