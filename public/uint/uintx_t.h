@@ -9,7 +9,7 @@ namespace sti {
 		std::vector<uint8_t> vals_;
 		size_t bits_;
 
-		void ensure_size(const unsigned long long v) const {
+		void ensure_size(const unsigned long long& v) const {
 			if (v >= 1ULL << bits_) throw std::overflow_error("Value Exceeds Bits");
 		}
 
@@ -53,7 +53,7 @@ namespace sti {
 		}
 		
 		uintx_t& operator=(const uint8_t& v);
-		uintx_t& operator=(const int v);
+		uintx_t& operator=(int v);
 
 		bool operator==(const uintx_t& other) const;
 		bool operator==(const int& other) const;

@@ -17,7 +17,7 @@ namespace sti {
 	public:
 
 		flag_bearer() {
-			size_t s = sizeof(int);
+			constexpr size_t s = sizeof(int);
 			flags_.resize(s, 0);
 			bits_ = s;
 		}

@@ -7,7 +7,7 @@ namespace sti {
 		size_t size_;
 		size_t cap_;
 
-		void resize(size_t new_cap) {
+		void resize(const size_t& new_cap) {
 			if (new_cap <= cap_) return;
 
 			T* new_data = static_cast<T*>(operator new(new_cap * sizeof(T)));
@@ -23,7 +23,7 @@ namespace sti {
 	public:
 		bale() : data_(nullptr), size_(0), cap_(0) {}
 		bale(std::initializer_list<T> data) : data_(nullptr), size_(0), cap_(0) {
-			size_t data_size = data.size();
+			const size_t data_size = data.size();
 			resize(data_size);
         
 			size_t i = 0;
@@ -88,9 +88,7 @@ namespace sti {
 
 		bool remove(const T& item) {
 			for (size_t i = 0; i < size_; ++i) {
-				if (data_[i] == item) {
-					return remove(i);
-				}
+				if (data_[i] == item) return remove(i);
 			}
 			return false;
 		}

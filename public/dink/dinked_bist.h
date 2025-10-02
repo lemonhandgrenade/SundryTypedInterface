@@ -9,14 +9,14 @@ namespace sti {
 		std::unordered_map<size_t, dink<T>> dinks_;
 		dink<T> cur_;
 	public:
-		dinked_bist(std::vector<dink<T>> list) {
+		explicit dinked_bist(std::vector<dink<T>> list) {
 			for (size_t i = 0; i < list.size(); ++i) {
 				if (i == 0) cur_ = list[0];
 				dinks_.insert(std::pair<size_t, dink<T>>(list[i].hash(), list[i]));
 			}
 		}
 
-		dink<T> getCurrent() {
+		dink<T> get_current() {
 			return cur_;
 		}
 

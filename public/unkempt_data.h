@@ -8,7 +8,7 @@ namespace sti {
 	class unkempt_data {
 		std::vector<std::any> data_;
 	public:
-		unkempt_data(std::initializer_list<std::any> data) : data_(data) {}
+		unkempt_data(const std::initializer_list<std::any>& data) : data_(data) {}
 
 		template <typename T>
 		T get(const size_t i) {
