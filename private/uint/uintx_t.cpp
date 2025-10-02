@@ -34,13 +34,13 @@ uintx_t uintx_t::operator+(const uintx_t& other) const {
 
 void uintx_t::operator+=(const uintx_t& other) {
 	if (other.bits_ != this->bits_) throw std::invalid_argument("Bit sizes must match for addition.");
-	unsigned long long result = this->to_int() + other.to_int();
+	const unsigned long long result = this->to_int() + other.to_int();
 	this->set_vals(result);
 }
 
 uintx_t uintx_t::operator-(const uintx_t& other) const {
 	if (other.bits_ != this->bits_) throw std::invalid_argument("Bit sizes must match for subtraction.");
-	unsigned long long result = this->to_int() - other.to_int();
+	const unsigned long long result = this->to_int() - other.to_int();
 	uintx_t diff(bits_);
 	diff.set_vals(result);
 	return diff;
@@ -48,7 +48,7 @@ uintx_t uintx_t::operator-(const uintx_t& other) const {
 
 void uintx_t::operator-=(const uintx_t& other) {
 	if (other.bits_ != this->bits_) throw std::invalid_argument("Bit sizes must match for subtraction.");
-	unsigned long long result = this->to_int() - other.to_int();
+	const unsigned long long result = this->to_int() - other.to_int();
 	this->set_vals(result);
 }
 
