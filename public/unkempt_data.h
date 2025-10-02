@@ -22,9 +22,9 @@ namespace sti {
 		}
 
 		std::vector<std::any>::iterator begin() { return data_.begin(); }
-		[[nodiscard]] std::vector<std::any>::const_iterator begin() const { return data_.begin(); }
+		_NODISCARD std::vector<std::any>::const_iterator begin() const { return data_.begin(); }
 		std::vector<std::any>::iterator end() { return data_.end(); }
-		[[nodiscard]] std::vector<std::any>::const_iterator end() const { return data_.end(); }
+		_NODISCARD std::vector<std::any>::const_iterator end() const { return data_.end(); }
 	};
 }
 

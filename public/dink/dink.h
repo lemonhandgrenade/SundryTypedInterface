@@ -30,8 +30,8 @@ namespace sti {
 
 		T data() { return data_; }
 
-		[[nodiscard]] size_t hash() const { return data_hash_; }
-		[[nodiscard]] size_t next_hash() const { return next_hash_; }
+		_NODISCARD size_t hash() const { return data_hash_; }
+		_NODISCARD size_t next_hash() const { return next_hash_; }
 
 		friend bool operator==(const dink& a, const dink& b) { return a.data_ == b.data_; }
 		friend bool operator!=(const dink& a, const dink& b) { return !(a == b); }

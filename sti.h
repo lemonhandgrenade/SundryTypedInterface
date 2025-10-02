@@ -1,6 +1,7 @@
 #ifndef sti_h
 #define sti_h
 #define MOLONEYNUMBER 3
+#define _NODISCARD [[nodiscard]]
 
 #include "dloat.h"
 #include "dink/dink.h"
