@@ -36,15 +36,16 @@ void dinkedBistTests() {
 	dinked_bist<int> dinked = dinked_bist<int>({test_dinka, test_dinkd, test_dinkb, test_dinkc});
 
 	assert(dinked.get_current().data() == test_dinka.data());
-	dinked.next();
+	dinked.next();	// B
 	assert(dinked.get_current().data() == test_dinkb.data());
-	dinked.next();
+	dinked.next();	// C
 	assert(dinked.get_current().data() == test_dinkc.data());
-	dinked.next();
+	dinked.next();	// D
 	assert(dinked.get_current().data() == test_dinkd.data());
-	dinked.next();
+	dinked.next();	// D
 	assert(dinked.get_current().data() == test_dinkd.data());
-	dinked.next();
+	dinked.prev();	// C
+	assert(dinked.get_current().data() == test_dinkc.data());
 	
 	std::cout << "End Dinked Bist Test\n";
 }
@@ -140,7 +141,7 @@ void baleTests() {
 void unkemptTests() {
 	std::cout << "Start unkempt Test\n";
 	unkempt_data data = {true, 2.0, 5.0f, "It has begun."};
-	assert(data.get<bool>(0));
+	assert(data.get(0));
 	assert(data.get<double>(1) == 2.0);
 	assert(strcmp(data.get<const char*>(3), "It has begun.") == 0);
 	std::cout << "End unkempt Test\n";

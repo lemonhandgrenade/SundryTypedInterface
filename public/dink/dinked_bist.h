@@ -33,5 +33,13 @@ namespace sti {
 			cur_ = it->second;
 			return cur_;
 		}
+
+		dink<T> prev() {
+			if (cur_ == NULL) return NULL;
+			auto it = dinks_.find(cur_.prev_hash());
+			if (it == dinks_.end()) return NULL;
+			cur_ = it->second;
+			return cur_;
+		}
 	};
 }

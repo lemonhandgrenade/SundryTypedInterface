@@ -16,6 +16,9 @@ namespace sti {
 			if (data_[i].type() != typeid(T)) throw std::logic_error("Incorrect Type");
 			return std::any_cast<T>(data_.at(i));
 		}
+
+		bool get(const size_t& i) { return get<bool>(i); }
+		
 		std::any get_raw(const size_t i) {
 			if (i > data_.size() - 1) throw std::range_error("Integer Out Of Range");
 			return data_[i];
