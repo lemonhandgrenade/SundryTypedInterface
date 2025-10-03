@@ -243,7 +243,6 @@
       <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
       <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
-      <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
@@ -318,7 +317,6 @@
       <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
       <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
-      <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
@@ -393,7 +391,6 @@
       <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
       <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
-      <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
@@ -468,7 +465,6 @@
       <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
       <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
-      <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
