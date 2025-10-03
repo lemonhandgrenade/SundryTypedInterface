@@ -245,6 +245,7 @@
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
       <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="private\uint\uint4_t.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -319,6 +320,7 @@
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
       <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="private\uint\uint6_t.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -393,6 +395,7 @@
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
       <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="private\uint\uintx_t.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -467,6 +470,7 @@
       <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
       <AdditionalIncludeDirectories>E:\repos\SundryTypedInterface\public</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Build|x64'">$(ProjectDir)\public</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="sti.cpp" />
   </ItemGroup>
